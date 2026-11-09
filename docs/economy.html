@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economy & Resources - Puri Village</title>
+    <!-- <link rel="stylesheet" href="economy.css"> -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header secondary" role="banner">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heart" aria-hidden="true"></i>
+                <span>Puri Village</span>
+            </div>
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="./index.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="./about.html"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
+                    <li><a href="./heritage.html"><i class="fas fa-heart" aria-hidden="true"></i> Heritage</a></li>
+                    <li><a href="./culture.html"><i class="fas fa-palette" aria-hidden="true"></i> Culture</a></li>
+                    <li><a href="./infrastructure.html"><i class="fas fa-building" aria-hidden="true"></i> Infrastructure</a></li>
+                    <li><a href="./economy.html" class="active" aria-current="page"><i class="fas fa-chart-line" aria-hidden="true"></i> Economy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" role="main">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1>Economy & <span class="highlight">Resources</span></h1>
+                <p>Puri's economy thrives on a unique blend of spiritual tourism, traditional industries, and coastal resources, creating sustainable livelihoods for its diverse population.</p>
+            </section>
+
+            <!-- Economic Sectors -->
+            <section class="economic-sectors" aria-labelledby="sectors-heading">
+                <h2 id="sectors-heading" class="sr-only">Economic Sectors</h2>
+                <div class="sectors-grid">
+                    <article class="sector-card tourism">
+                        <div class="sector-icon" aria-hidden="true">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="progress-circle" data-percentage="45">
+                            <svg class="progress-ring" width="80" height="80">
+                                <circle class="progress-ring-circle" cx="40" cy="40" r="30"></circle>
+                            </svg>
+                            <div class="progress-text">45%</div>
+                        </div>
+                        <h3>Tourism</h3>
+                        <p>Primary economic driver with millions of pilgrims and tourists annually</p>
+                        <div class="sector-activities">
+                            <h4>Key Activities:</h4>
+                            <div class="activity-tags">
+                                <span class="activity-tag" tabindex="0" role="button">Hotel & hospitality</span>
+                                <span class="activity-tag" tabindex="0" role="button">Travel services</span>
+                                <span class="activity-tag" tabindex="0" role="button">Souvenir shops</span>
+                                <span class="activity-tag" tabindex="0" role="button">Tour guides</span>
+                            </div>
+                        </div>
+                        <button class="btn-read-more" aria-label="Read more about Tourism sector">
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            Read More
+                        </button>
+                    </article>
+
+                    <article class="sector-card fishing">
+                        <div class="sector-icon" aria-hidden="true">
+                            <i class="fas fa-fish"></i>
+                        </div>
+                        <div class="progress-circle" data-percentage="20">
+                            <svg class="progress-ring" width="80" height="80">
+                                <circle class="progress-ring-circle" cx="40" cy="40" r="30"></circle>
+                            </svg>
+                            <div class="progress-text">20%</div>
+                        </div>
+                        <h3>Fishing Industry</h3>
+                        <p>Traditional occupation providing livelihood to coastal communities</p>
+                        <div class="sector-activities">
+                            <h4>Key Activities:</h4>
+                            <div class="activity-tags">
+                                <span class="activity-tag" tabindex="0" role="button">Deep-sea fishing</span>
+                                <span class="activity-tag" tabindex="0" role="button">Fish processing</span>
+                                <span class="activity-tag" tabindex="0" role="button">Boat building</span>
+                                <span class="activity-tag" tabindex="0" role="button">Net manufacturing</span>
+                            </div>
+                        </div>
+                        <button class="btn-read-more" aria-label="Read more about Fishing Industry sector">
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            Read More
+                        </button>
+                    </article>
+
+                    <article class="sector-card handicrafts">
+                        <div class="sector-icon" aria-hidden="true">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="progress-circle" data-percentage="15">
+                            <svg class="progress-ring" width="80" height="80">
+                                <circle class="progress-ring-circle" cx="40" cy="40" r="30"></circle>
+                            </svg>
+                            <div class="progress-text">15%</div>
+                        </div>
+                        <h3>Handicrafts</h3>
+                        <p>Traditional arts and crafts supporting artisan families</p>
+                        <div class="sector-activities">
+                            <h4>Key Activities:</h4>
+                            <div class="activity-tags">
+                                <span class="activity-tag" tabindex="0" role="button">Pattachitra paintings</span>
+                                <span class="activity-tag" tabindex="0" role="button">Applique work</span>
+                                <span class="activity-tag" tabindex="0" role="button">Wood carving</span>
+                                <span class="activity-tag" tabindex="0" role="button">Stone sculpture</span>
+                            </div>
+                        </div>
+                        <button class="btn-read-more" aria-label="Read more about Handicrafts sector">
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            Read More
+                        </button>
+                    </article>
+
+                    <article class="sector-card services">
+                        <div class="sector-icon" aria-hidden="true">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="progress-circle" data-percentage="20">
+                            <svg class="progress-ring" width="80" height="80">
+                                <circle class="progress-ring-circle" cx="40" cy="40" r="30"></circle>
+                            </svg>
+                            <div class="progress-text">20%</div>
+                        </div>
+                        <h3>Services & Trade</h3>
+                        <p>Local businesses, markets, and professional services</p>
+                        <div class="sector-activities">
+                            <h4>Key Activities:</h4>
+                            <div class="activity-tags">
+                                <span class="activity-tag" tabindex="0" role="button">Retail shops</span>
+                                <span class="activity-tag" tabindex="0" role="button">Banking</span>
+                                <span class="activity-tag" tabindex="0" role="button">Transportation</span>
+                                <span class="activity-tag" tabindex="0" role="button">Professional services</span>
+                            </div>
+                        </div>
+                        <button class="btn-read-more" aria-label="Read more about Services & Trade sector">
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            Read More
+                        </button>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Key Industries -->
+            <section class="key-industries" aria-labelledby="industries-heading">
+                <h2 id="industries-heading">Key Industries</h2>
+                <div class="industries-grid">
+                    <article class="industry-card" data-tooltip="Main crops: Rice, Coconut, Betel leaves, Vegetables. Seasonal farming with traditional methods.">
+                        <div class="industry-icon" aria-hidden="true">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Agriculture</h3>
+                        <p>Paddy cultivation, betel leaves, and coconut farming in surrounding areas</p>
+                        <div class="industry-stats">
+                            <div class="stat-number counter" data-target="15000">0</div>
+                            <div class="stat-label">People Employed</div>
+                        </div>
+                        <div class="industry-tags">
+                            <span>Rice</span>
+                            <span>Coconut</span>
+                            <span>Betel</span>
+                            <span>Vegetables</span>
+                        </div>
+                    </article>
+
+                    <article class="industry-card" data-tooltip="Sectors: Food processing, Textiles, Handicrafts, Construction materials. Supporting local economy.">
+                        <div class="industry-icon" aria-hidden="true">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Small Scale Industries</h3>
+                        <p>Local manufacturing and processing units supporting the economy</p>
+                        <div class="industry-stats">
+                            <div class="stat-number counter" data-target="8500">0</div>
+                            <div class="stat-label">People Employed</div>
+                        </div>
+                        <div class="industry-tags">
+                            <span>Food processing</span>
+                            <span>Textiles</span>
+                            <span>Handicrafts</span>
+                            <span>Construction</span>
+                        </div>
+                    </article>
+
+                    <article class="industry-card" data-tooltip="Services: Hospitality, Transport, Retail, Banking, Healthcare. Growing sector catering to tourism.">
+                        <div class="industry-icon" aria-hidden="true">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Service Sector</h3>
+                        <p>Growing service economy catering to tourism and local needs</p>
+                        <div class="industry-stats">
+                            <div class="stat-number counter" data-target="25000">0</div>
+                            <div class="stat-label">People Employed</div>
+                        </div>
+                        <div class="industry-tags">
+                            <span>Hospitality</span>
+                            <span>Transport</span>
+                            <span>Retail</span>
+                            <span>Banking</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Economic Indicators -->
+            <section class="economic-indicators" aria-labelledby="indicators-heading">
+                <h2 id="indicators-heading">Economic Indicators</h2>
+                <div class="indicators-container">
+                    <div class="indicators-grid">
+                        <div class="indicator-item">
+                            <div class="indicator-icon" aria-hidden="true">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="indicator-value counter" data-target="13" data-suffix="M+">0</div>
+                            <div class="indicator-label">Annual Tourists</div>
+                        </div>
+                        <div class="indicator-item">
+                            <div class="indicator-icon" aria-hidden="true">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="indicator-value counter" data-target="78" data-suffix="%">0</div>
+                            <div class="indicator-label">Employment Rate</div>
+                        </div>
+                        <div class="indicator-item">
+                            <div class="indicator-icon" aria-hidden="true">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="indicator-value counter" data-target="5000" data-suffix="+">0</div>
+                            <div class="indicator-label">Local Businesses</div>
+                        </div>
+                        <div class="indicator-item">
+                            <div class="indicator-icon" aria-hidden="true">
+                                <i class="fas fa-rupee-sign"></i>
+                            </div>
+                            <div class="indicator-value counter" data-target="3.2" data-prefix="₹" data-suffix="L">0</div>
+                            <div class="indicator-label">Average Income</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Future Development Vision -->
+            <section class="future-development" aria-labelledby="development-heading">
+                <div class="development-header">
+                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    <h2 id="development-heading">Future Development Vision</h2>
+                </div>
+                <p>Puri is focused on sustainable economic growth that preserves its cultural heritage while embracing modern opportunities in tourism, technology, and green initiatives.</p>
+                
+                <div class="development-pillars">
+                    <article class="pillar-item" tabindex="0" role="button" aria-label="Learn more about Sustainable Tourism">
+                        <div class="pillar-icon" aria-hidden="true">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Sustainable Tourism</h4>
+                        <p>Eco-friendly tourism infrastructure and responsible visitor management</p>
+                        <ul>
+                            <li>Heritage conservation projects</li>
+                            <li>Digital tourism services</li>
+                            <li>Green transportation</li>
+                        </ul>
+                    </article>
+                    <article class="pillar-item" tabindex="0" role="button" aria-label="Learn more about Skill Development">
+                        <div class="pillar-icon" aria-hidden="true">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Skill Development</h4>
+                        <p>Training programs for youth in tourism and traditional crafts</p>
+                        <ul>
+                            <li>Hospitality training</li>
+                            <li>Digital literacy</li>
+                            <li>Entrepreneurship support</li>
+                        </ul>
+                    </article>
+                    <article class="pillar-item" tabindex="0" role="button" aria-label="Learn more about Infrastructure Growth">
+                        <div class="pillar-icon" aria-hidden="true">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <h4>Infrastructure Growth</h4>
+                        <p>Modern facilities while maintaining cultural authenticity</p>
+                        <ul>
+                            <li>Smart city initiatives</li>
+                            <li>Improved connectivity</li>
+                            <li>Cultural centers</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip" role="tooltip"></div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heart" aria-hidden="true"></i>
+                        <div>
+                            <h4>Puri Village</h4>
+                            <p>Sacred Land of Jagannath</p>
+                        </div>
+                    </div>
+                    <p>Discover the spiritual magnificence and cultural heritage of Puri, where ancient traditions meet coastal beauty in perfect harmony.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="./about.html">About Puri</a></li>
+                        <li><a href="./heritage.html">Heritage Sites</a></li>
+                        <li><a href="./culture.html">Culture & Traditions</a></li>
+                        <li><a href="./infrastructure.html">Infrastructure</a></li>
+                        <li><a href="./economy.html">Economy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Heritage</h4>
+                    <ul>
+                        <li><a href="#">Jagannath Temple</a></li>
+                        <li><a href="#">Rath Yatra</a></li>
+                        <li><a href="#">Gundicha Temple</a></li>
+                        <li><a href="#">Puri Beach</a></li>
+                        <li><a href="#">Chilika Lake</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Tourism Services</h4>
+                    <ul>
+                        <li><a href="#">Accommodation</a></li>
+                        <li><a href="#">Tour Guides</a></li>
+                        <li><a href="#">Transportation</a></li>
+                        <li><a href="#">Festival Calendar</a></li>
+                        <li><a href="#">Photo Gallery</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    <span>Puri, Odisha 752001, India</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <span>+91-6752-222-203</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <span>info@purivillage.in</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe" aria-hidden="true"></i>
+                    <span>www.purivillage.in</span>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sumit Kumar Sahu. All rights reserved. Built with <i class="fas fa-heart" aria-hidden="true"></i> for the sacred city of Lord Jagannath.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+     <script src="./js/script.js"></script>
+</body>
+</html>

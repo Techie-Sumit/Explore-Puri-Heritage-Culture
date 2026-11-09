@@ -1,0 +1,3112 @@
+/* ==========================================
+   MASTER STYLE.CSS - PROFESSIONAL WEBSITE
+   ========================================== */
+
+/* ==========================================
+   1. GLOBAL RESET & BASE STYLES
+   ========================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+/* Focus styles for accessibility */
+:focus {
+    outline: 2px solid #ff6b35;
+    outline-offset: 2px;
+}
+
+/* Screen Reader Only */
+.sr-only,
+.skip-link {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* ==========================================
+   2. LAYOUT & TYPOGRAPHY
+   ========================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.highlight {
+    color: #ffd700;
+}
+
+/* Section Headers */
+.section-header,
+.content-section h2,
+.arts-section h2,
+.festival-calendar h2,
+.key-industries h2,
+.economic-indicators h2,
+.infra-stats h2 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2,
+.content-section h2,
+.arts-section h2,
+.festival-calendar h2,
+.key-industries h2,
+.economic-indicators h2,
+.infra-stats h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+    position: relative;
+}
+
+.section-header h2::after,
+.content-section h2::after,
+.arts-section h2::after,
+.festival-calendar h2::after,
+.key-industries h2::after,
+.economic-indicators h2::after,
+.infra-stats h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    border-radius: 2px;
+}
+
+.section-header p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   3. HEADER & NAVIGATION
+   ========================================== */
+
+.header {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* About, Heritage, Culture, Infrastructure, Economy pages header */
+body.about-page .header,
+body.heritage-page .header,
+body.culture-page .header,
+body.infrastructure-page .header,
+body.economy-page .header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo i {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn,
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger-line,
+.nav-toggle span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+    transform-origin: center;
+    border-radius: 2px;
+}
+
+.nav-toggle span {
+    width: 25px;
+    margin: 3px 0;
+}
+
+/* Hamburger Animation */
+.mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(1),
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(2),
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(3),
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Navigation */
+.nav,
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav a,
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav a:hover,
+.nav a:focus,
+.nav-menu a:hover,
+.nav-menu a:focus,
+.nav-menu a.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   4. BUTTONS & INTERACTIVE ELEMENTS
+   ========================================== */
+
+.btn-primary,
+.btn-secondary,
+.btn-gallery,
+.btn-contact,
+.btn-read-more,
+.cta-button,
+.submit-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-primary,
+.btn-gallery,
+.btn-contact,
+.btn-read-more,
+.cta-button,
+.submit-btn {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-gallery:hover,
+.btn-gallery:focus,
+.btn-contact:hover,
+.btn-contact:focus,
+.btn-read-more:hover,
+.btn-read-more:focus,
+.cta-button:hover,
+.cta-button:focus,
+.submit-btn:hover,
+.submit-btn:focus {
+    background: linear-gradient(135deg, #e55a2b, #e8851d);
+    transform: translateY(-2px);
+    outline: 2px solid rgba(255, 107, 53, 0.5);
+    outline-offset: 2px;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+.btn-read-more i,
+.cta-button i,
+.btn-gallery i,
+.btn-contact i,
+.submit-btn i {
+    transition: transform 0.3s ease;
+}
+
+.btn-read-more:hover i,
+.cta-button:hover i,
+.btn-gallery:hover i,
+.btn-contact:hover i,
+.submit-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* ==========================================
+   5. CARDS & CONTENT BLOCKS
+   ========================================== */
+
+.abstract-card,
+.history-card,
+.site-card,
+.culture-card,
+.festival-card,
+.sector-card,
+.industry-card,
+.stat-card,
+.indicator-item,
+.infra-category,
+.personality-card,
+.fact-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.abstract-card:hover,
+.abstract-card:focus-within,
+.history-card:hover,
+.site-card:hover,
+.culture-card:hover,
+.festival-card:hover,
+.sector-card:hover,
+.industry-card:hover,
+.stat-card:hover,
+.indicator-item:hover,
+.infra-category:hover,
+.personality-card:hover,
+.fact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Top Borders */
+.abstract-card::before,
+.history-card,
+.culture-card,
+.festival-card,
+.sector-card,
+.stat-card::before,
+.indicator-item::before,
+.infra-category {
+    border-top: 4px solid #3498db;
+}
+
+.site-card.religious .site-category {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+}
+
+.site-card.festival .site-category {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.site-card.natural .site-category {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+}
+
+/* Card Icons */
+.abstract-icon,
+.culture-icon,
+.festival-icon,
+.sector-icon,
+.industry-icon,
+.stat-icon,
+.indicator-icon,
+.personality-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    transition: all 0.3s ease;
+}
+
+.abstract-icon.about,
+.culture-icon,
+.sector-icon,
+.industry-icon,
+.stat-icon,
+.indicator-icon {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.abstract-icon.heritage {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+}
+
+.abstract-icon.culture {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.abstract-icon.infrastructure {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.abstract-icon.economy {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.festival-icon,
+.personality-image {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.abstract-icon i,
+.culture-icon i,
+.festival-icon i,
+.sector-icon i,
+.industry-icon i,
+.stat-icon i,
+.indicator-icon i,
+.personality-image i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+/* ==========================================
+   6. FORMS
+   ========================================== */
+
+.contact-form {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+}
+
+.required {
+    color: #e74c3c;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff6b35;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #e74c3c;
+    background: #fdf2f2;
+}
+
+/* ==========================================
+   7. HOME PAGE STYLES
+   ========================================== */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 80px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 60px;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.star-icon {
+    position: absolute;
+    top: -50px;
+    left: 50px;
+    color: #ffd700;
+    font-size: 2rem;
+}
+
+.hero-content h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.hero-content h2 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content h3 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+/* Statistics Section */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.stat-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #ffd700;
+}
+
+.stat-item h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Section Abstracts */
+.section-abstracts {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.abstracts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.abstract-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.abstract-card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+/* Map Section */
+.map-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.map-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.map-header h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.map-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.map-container {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+.map-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    background: white;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8f9fa;
+    padding: 15px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-item i {
+    color: #ff6b35;
+    font-size: 1.2rem;
+}
+
+.info-item span {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-header h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.contact-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   8. ABOUT PAGE STYLES
+   ========================================== */
+
+.main-content {
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Content Sections */
+.content-section {
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+}
+
+/* History Grid */
+.history-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.history-card {
+    border-left: 5px solid #3498db;
+    padding: 2rem;
+}
+
+.history-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.key-features {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.key-features h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item i {
+    font-size: 1.5rem;
+    color: #3498db;
+    margin-top: 0.2rem;
+}
+
+.feature-item h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Geography Sections */
+.geography-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.geo-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #e74c3c;
+}
+
+.geo-section h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+/* Demographics */
+.demographics {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem 0;
+    border-radius: 20px;
+    margin: 3rem 0;
+}
+
+.demographics h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.demographics h2::after {
+    background: #ffd700;
+}
+
+.demo-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.demo-stat {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.demo-stat:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.demo-stat i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+.demo-stat h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Timeline Section */
+.timeline-section {
+    margin: 4rem 0;
+    padding: 3rem 0;
+    background: #f8f9fa;
+    border-radius: 20px;
+}
+
+.timeline-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.timeline-section h2 i {
+    color: #8b4513;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 2rem 0;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+    padding-right: 3rem;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+    padding-left: 3rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background: #ff6b35;
+    border: 4px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #ff6b35;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+.timeline-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.timeline-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Personalities Section */
+.personalities-section {
+    margin: 4rem 0;
+    padding: 3rem 0;
+}
+
+.personalities-section h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.personalities-section h2 i {
+    color: #9b59b6;
+}
+
+.personalities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.personality-card {
+    text-align: center;
+    border-top: 4px solid #9b59b6;
+}
+
+.personality-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.personality-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Facts Section */
+.facts-section {
+    margin: 4rem 0;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    border-radius: 20px;
+    color: white;
+}
+
+.facts-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.facts-section h2::after {
+    background: #ffd700;
+}
+
+.facts-section h2 i {
+    color: #ffd700;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.fact-card {
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fact-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+.fact-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.fact-card p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* CTA Section */
+.cta-section {
+    margin: 4rem 0;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+/* ==========================================
+   9. HERITAGE PAGE STYLES
+   ========================================== */
+
+/* Heritage Sites Section */
+.heritage-sites {
+    margin-bottom: 4rem;
+}
+
+.sites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Site Image */
+.site-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.site-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.site-card:hover .site-image img {
+    transform: scale(1.05);
+}
+
+/* Site Category Badge */
+.site-category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+/* Site Content */
+.site-content {
+    padding: 2rem;
+}
+
+.site-content h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.site-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Site Details */
+.site-details {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.detail-item i {
+    color: #3498db;
+}
+
+/* Site Tags */
+.site-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.site-tags span {
+    background: #f8f9fa;
+    color: #666;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid #e9ecef;
+}
+
+/* Site Actions */
+.site-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Plan Journey Section */
+.plan-journey {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.journey-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.journey-header i {
+    font-size: 2rem;
+    color: #ffd700;
+}
+
+.journey-header h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.plan-journey p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+/* ==========================================
+   10. CULTURE PAGE STYLES
+   ========================================== */
+
+/* Cultural Elements Section */
+.cultural-elements {
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+}
+
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.culture-card {
+    text-align: center;
+    border-top: 4px solid #3498db;
+}
+
+.culture-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.culture-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.culture-tags,
+.art-tags,
+.industry-tags,
+.activity-tags {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.culture-tags span,
+.art-tags span,
+.industry-tags span,
+.activity-tag {
+    background: #f8f9fa;
+    color: #666;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid #e9ecef;
+}
+
+.activity-tag {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.activity-tag:hover,
+.activity-tag:focus {
+    background: #3498db;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Arts Section */
+.arts-section {
+    margin: 4rem 0;
+    padding: 3rem 0;
+    background: #f8f9fa;
+    border-radius: 20px;
+}
+
+.arts-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.arts-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.art-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #e74c3c;
+}
+
+.art-item h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.art-item p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.arts-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.arts-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.arts-image:hover img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 3rem 2rem 1.5rem;
+    text-align: center;
+}
+
+.image-overlay h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.image-overlay p {
+    opacity: 0.9;
+}
+
+/* Festival Calendar */
+.festival-calendar {
+    margin: 4rem 0;
+    padding: 3rem 0;
+}
+
+.festivals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.festival-card {
+    text-align: center;
+    border-top: 4px solid #9b59b6;
+}
+
+.festival-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.festival-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #9b59b6;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.festival-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.festival-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Living Culture */                                     
+.living-culture {
+    margin: 4rem 0;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+}
+
+.culture-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.culture-header i {
+    font-size: 2rem;
+    color: #ffd700;
+}
+
+.culture-header h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.living-culture p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.living-aspects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.aspect-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.aspect-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.aspect-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #ffd700;
+}
+
+.aspect-item p {
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* ==========================================
+   11. INFRASTRUCTURE PAGE STYLES
+   ========================================== */
+
+/* Infrastructure Categories */
+.infrastructure-categories {
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+}
+
+.infra-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.infra-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.infra-category:hover::before {
+    left: 100%;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.category-header i {
+    font-size: 2rem;
+    color: #3498db;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.category-header h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.infra-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.infra-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.infra-list li i {
+    color: #3498db;
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* Smart City Development */
+.smart-city {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    margin: 4rem 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.smart-city.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.smart-city-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.smart-city-header i {
+    font-size: 2.5rem;
+    color: #ffd700;
+}
+
+.smart-city-header h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.smart-city p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.smart-initiatives {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.initiative-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    text-align: center;
+}
+
+.initiative-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.initiative-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.initiative-icon i {
+    font-size: 2.5rem;
+    color: #ffd700;
+}
+
+.initiative-item:hover .initiative-icon {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.initiative-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+.initiative-item p {
+    opacity: 0.9;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Infrastructure Statistics */
+.infra-stats {
+    margin: 4rem 0;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* ==========================================
+   12. ECONOMY PAGE STYLES
+   ========================================== */
+
+/* Economic Sectors */
+.economic-sectors {
+    margin-bottom: 6rem;
+    padding: 2rem 0;
+}
+
+.sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.sector-card.tourism {
+    border-top-color: #ff6b35;
+}
+
+.sector-card.fishing {
+    border-top-color: #3498db;
+}
+
+.sector-card.handicrafts {
+    border-top-color: #9b59b6;
+}
+
+.sector-card.services {
+    border-top-color: #e74c3c;
+}
+
+.sector-card.tourism .sector-icon {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+}
+
+.sector-card.fishing .sector-icon {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.sector-card.handicrafts .sector-icon {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.sector-card.services .sector-icon {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+/* Progress Circle */
+.progress-circle {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+    fill: transparent;
+    stroke: #e6e6e6;
+    stroke-width: 4;
+    stroke-dasharray: 188.5;
+    stroke-dashoffset: 188.5;
+    transition: stroke-dashoffset 2s ease-in-out;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.sector-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.sector-card p {
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.sector-activities {
+    margin-bottom: 2rem;
+}
+
+.sector-activities h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Key Industries */
+.key-industries {
+    margin: 6rem 0;
+    padding: 3rem 0;
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.industry-card {
+    text-align: center;
+    cursor: pointer;
+}
+
+.industry-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.industry-card p {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.industry-stats {
+    margin-bottom: 2rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff6b35;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Economic Indicators */
+.economic-indicators {
+    margin: 6rem 0;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.indicators-container {
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.indicators-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 2rem;
+    min-width: 800px;
+}
+
+.indicator-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: inline;
+}
+
+.indicator-label {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* Future Development */
+.future-development {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    margin: 6rem 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.future-development.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.development-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.development-header i {
+    font-size: 2.5rem;
+    color: #ffd700;
+}
+
+.development-header h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.future-development p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.development-pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.pillar-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.pillar-item.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pillar-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.pillar-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.pillar-icon i {
+    font-size: 2.5rem;
+    color: #ffd700;
+}
+
+.pillar-item:hover .pillar-icon {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.pillar-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+.pillar-item p {
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.pillar-item ul {
+    list-style: none;
+    text-align: left;
+}
+
+.pillar-item ul li {
+    padding: 0.3rem 0;
+    opacity: 0.8;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.pillar-item ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* ==========================================
+   13. FOOTER
+   ========================================== */
+
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 80px 0 20px;
+}
+
+/* About, Heritage, Culture, Infrastructure, Economy pages footer */
+body.about-page .footer,
+body.heritage-page .footer,
+body.culture-page .footer,
+body.infrastructure-page .footer,
+body.economy-page .footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-logo i {
+    background: #ff6b35;
+    padding: 12px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.footer-logo h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.footer-logo p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: white;
+}
+
+/* Home page footer section titles */
+body:not(.about-page):not(.heritage-page):not(.culture-page):not(.infrastructure-page):not(.economy-page) .footer-section h4 {
+    color: white;
+}
+
+/* Other pages footer section titles */
+body.about-page .footer-section h4,
+body.heritage-page .footer-section h4,
+body.culture-page .footer-section h4,
+body.infrastructure-page .footer-section h4,
+body.economy-page .footer-section h4 {
+    color: #ff6b35;
+}
+
+.footer-section p {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Other pages footer section text */
+body.about-page .footer-section p,
+body.heritage-page .footer-section p,
+body.culture-page .footer-section p,
+body.infrastructure-page .footer-section p,
+body.economy-page .footer-section p {
+    color: #bdc3c7;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Other pages footer links */
+body.about-page .footer-section ul li a,
+body.heritage-page .footer-section ul li a,
+body.culture-page .footer-section ul li a,
+body.infrastructure-page .footer-section ul li a,
+body.economy-page .footer-section ul li a {
+    color: #bdc3c7;
+}
+
+.footer-section ul li a:hover,
+.footer-section ul li a:focus {
+    color: #ff6b35;
+    outline: 1px solid #ff6b35;
+    outline-offset: 2px;
+}
+
+/* Other pages footer links hover */
+body.about-page .footer-section ul li a:hover,
+body.heritage-page .footer-section ul li a:hover,
+body.culture-page .footer-section ul li a:hover,
+body.infrastructure-page .footer-section ul li a:hover,
+body.economy-page .footer-section ul li a:hover {
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Other pages social icons */
+body.about-page .social-icons a,
+body.heritage-page .social-icons a,
+body.culture-page .social-icons a,
+body.infrastructure-page .social-icons a,
+body.economy-page .social-icons a {
+    background: #3498db;
+    color: white;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+    background: #ff6b35;
+    color: white;
+    outline: 2px solid #ff6b35;
+    outline-offset: 2px;
+    transform: translateY(-3px);
+}
+
+/* Other pages social icons hover */
+body.about-page .social-icons a:hover,
+body.heritage-page .social-icons a:hover,
+body.culture-page .social-icons a:hover,
+body.infrastructure-page .social-icons a:hover,
+body.economy-page .social-icons a:hover {
+    background: #2980b9;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+    padding: 30px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+/* Other pages contact info borders */
+body.about-page .contact-info,
+body.heritage-page .contact-info,
+body.culture-page .contact-info,
+body.infrastructure-page .contact-info,
+body.economy-page .contact-info {
+    border-color: #34495e;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ccc;
+}
+
+/* Other pages contact items */
+body.about-page .contact-item,
+body.heritage-page .contact-item,
+body.culture-page .contact-item,
+body.infrastructure-page .contact-item,
+body.economy-page .contact-item {
+    color: #bdc3c7;
+}
+
+.contact-item i {
+    color: #ff6b35;
+    width: 20px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    color: #666;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Other pages footer bottom */
+body.about-page .footer-bottom,
+body.heritage-page .footer-bottom,
+body.culture-page .footer-bottom,
+body.infrastructure-page .footer-bottom,
+body.economy-page .footer-bottom {
+    border-color: #34495e;
+    color: #bdc3c7;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Other pages footer bottom links */
+body.about-page .footer-links a,
+body.heritage-page .footer-links a,
+body.culture-page .footer-links a,
+body.infrastructure-page .footer-links a,
+body.economy-page .footer-links a {
+    color: #bdc3c7;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+    color: #ff6b35;
+    outline: 1px solid #ff6b35;
+    outline-offset: 2px;
+}
+
+/* Other pages footer bottom links hover */
+body.about-page .footer-links a:hover,
+body.heritage-page .footer-links a:hover,
+body.culture-page .footer-links a:hover,
+body.infrastructure-page .footer-links a:hover,
+body.economy-page .footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom i {
+    color: #ff6b35;
+    margin: 0 5px;
+}
+
+/* ==========================================
+   14. GALLERY MODAL STYLES
+   ========================================== */
+
+.gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.gallery-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.gallery-container {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.gallery-modal.active .gallery-container {
+    transform: scale(1);
+}
+
+/* Gallery Header */
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.gallery-header h3 {
+    color: #2c3e50;
+    margin: 0;
+}
+
+.gallery-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.gallery-close:hover {
+    background: #e9ecef;
+    color: #2c3e50;
+}
+
+/* Gallery Content */
+.gallery-content {
+    padding: 2rem;
+}
+
+.gallery-main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.gallery-image-container {
+    position: relative;
+    max-width: 800px;
+    max-height: 500px;
+}
+
+.gallery-image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 2rem 1rem 1rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Gallery Navigation */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.gallery-nav:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav.prev {
+    left: -25px;
+}
+
+.gallery-nav.next {
+    right: -25px;
+}
+
+/* Gallery Thumbnails */
+.gallery-thumbnails {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.gallery-thumbnail {
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.gallery-thumbnail.active {
+    border-color: #ff6b35;
+}
+
+.gallery-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gallery Counter */
+.gallery-counter {
+    text-align: center;
+    color: #666;
+    font-weight: bold;
+}
+
+/* ==========================================
+   15. TOOLTIP
+   ========================================== */
+
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    max-width: 250px;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip.show {
+    opacity: 1;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+}
+
+/* ==========================================
+   16. RESPONSIVE MEDIA QUERIES
+   ========================================== */
+
+/* Large Desktop */
+@media (max-width: 1024px) {
+    .demo-stats,
+    .facts-grid,
+    .personalities-grid,
+    .culture-grid,
+    .festivals-grid,
+    .infra-grid,
+    .sectors-grid,
+    .industries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .indicators-grid {
+        grid-template-columns: repeat(2, 1fr);
+        min-width: 400px;
+    }
+    
+    .gallery-nav.prev {
+        left: -20px;
+    }
+    
+    .gallery-nav.next {
+        right: -20px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Hero adjustments */
+    .hero {
+        min-height: 90vh;
+        padding-top: 70px;
+        padding-bottom: 40px;
+    }
+
+    .star-icon {
+        display: none;
+    }
+
+    .hero-content {
+        padding: 0 15px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 60px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 280px;
+        max-width: 100%;
+    }
+
+    /* Stats grid mobile */
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+        padding: 0 15px;
+    }
+
+    .stat-item {
+        padding: 20px 15px;
+    }
+
+    .stat-item i {
+        font-size: 1.5rem;
+    }
+
+    .stat-item h4 {
+        font-size: 1.5rem;
+    }
+
+    /* Mobile Header */
+    .mobile-menu-btn,
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav,
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #ff6b35, #f7931e);
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Other pages nav menu */
+    body.about-page .nav,
+    body.heritage-page .nav,
+    body.culture-page .nav,
+    body.infrastructure-page .nav,
+    body.economy-page .nav,
+    body.about-page .nav-menu,
+    body.heritage-page .nav-menu,
+    body.culture-page .nav-menu,
+    body.infrastructure-page .nav-menu,
+    body.economy-page .nav-menu {
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+    }
+
+    .nav.mobile-menu-open,
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav a,
+    .nav-menu a {
+        padding: 15px 20px;
+        border-radius: 0;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu a {
+        justify-content: center;
+        padding: 1rem;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    /* Page adjustments */
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .history-grid,
+    .geography-sections,
+    .arts-content {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Timeline mobile adjustments */
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100% !important;
+        left: 0 !important;
+        text-align: left !important;
+        padding-left: 60px !important;
+        padding-right: 0 !important;
+    }
+
+    .timeline-item .timeline-dot {
+        left: 10px !important;
+        right: auto !important;
+    }
+
+    /* Abstracts grid mobile */
+    .abstracts-grid,
+    .personalities-grid,
+    .facts-grid,
+    .sites-grid,
+    .culture-grid,
+    .festivals-grid,
+    .sectors-grid,
+    .industries-grid,
+    .infra-grid,
+    .living-aspects,
+    .smart-initiatives,
+    .development-pillars {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .abstract-card {
+        padding: 30px 25px;
+    }
+
+    /* Map mobile */
+    .map-container iframe {
+        height: 300px;
+    }
+
+    .map-info {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* Contact form mobile */
+    .contact-form {
+        padding: 30px 25px;
+    }
+
+    /* Arts section mobile */
+    .arts-image {
+        order: -1;
+    }
+
+    .arts-image img {
+        height: 300px;
+    }
+
+    /* Infrastructure & Economy mobile */
+    .site-details {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .journey-header h2,
+    .smart-city-header h2,
+    .development-header h2 {
+        font-size: 2rem;
+    }
+
+    .indicators-container {
+        overflow-x: auto;
+        padding: 1rem;
+    }
+
+    .indicators-grid {
+        grid-template-columns: repeat(4, 180px);
+        min-width: 720px;
+        gap: 1rem;
+    }
+
+    .smart-city,
+    .future-development {
+        padding: 3rem 1rem;
+    }
+
+    /* Footer mobile */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* Gallery Modal Mobile */
+    .gallery-container {
+        max-width: 95vw;
+        max-height: 95vh;
+    }
+
+    .gallery-content {
+        padding: 1rem;
+    }
+
+    .gallery-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .gallery-nav.prev {
+        left: -15px;
+    }
+
+    .gallery-nav.next {
+        right: -15px;
+    }
+
+    .gallery-thumbnail {
+        width: 60px;
+        height: 45px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .hero {
+        min-height: 85vh;
+        padding-top: 60px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .stat-item {
+        padding: 20px 15px;
+    }
+
+    .cta-buttons {
+        padding: 0 20px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .hero-content {
+        padding: 0 10px;
+    }
+
+    .abstract-card,
+    .personality-card,
+    .fact-card,
+    .culture-card,
+    .festival-card,
+    .sector-card,
+    .industry-card,
+    .indicator-item,
+    .infra-category {
+        padding: 25px 20px;
+    }
+
+    .contact-form {
+        padding: 25px 20px;
+    }
+
+    .page-header {
+        padding: 2rem 0;
+    }
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .content-section h2,
+    .arts-section h2,
+    .festival-calendar h2,
+    .key-industries h2,
+    .economic-indicators h2,
+    .infra-stats h2 {
+        font-size: 2rem;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    .cta-button,
+    .btn-contact {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    .demo-stat {
+        padding: 1.5rem;
+    }
+
+    .timeline-content {
+        padding: 1.5rem;
+    }
+
+    .journey-header,
+    .smart-city-header,
+    .development-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .journey-header h2,
+    .smart-city-header h2,
+    .development-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .indicators-grid {
+        grid-template-columns: repeat(2, 160px);
+        min-width: 320px;
+    }
+
+    .indicator-value {
+        font-size: 2rem;
+    }
+
+    .stat-card h3 {
+        font-size: 2.5rem;
+    }
+
+    .pillar-item,
+    .aspect-item {
+        padding: 1.5rem;
+    }
+
+    /* Gallery Modal Mobile */
+    .gallery-header {
+        padding: 1rem;
+    }
+
+    .gallery-nav {
+        display: none;
+    }
+
+    .gallery-thumbnails {
+        gap: 0.5rem;
+    }
+
+    .gallery-thumbnail {
+        width: 50px;
+        height: 40px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .header,
+    .mobile-menu-btn,
+    .nav-toggle,
+    .cta-buttons,
+    .contact-form,
+    .social-icons,
+    .gallery-modal {
+        display: none;
+    }
+
+    .hero {
+        height: auto;
+        color: #333;
+    }
+
+    .hero::after {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .btn-primary,
+    .btn-secondary,
+    .btn-gallery,
+    .btn-contact,
+    .btn-read-more,
+    .cta-button {
+        border: 2px solid currentColor;
+    }
+
+    .abstract-card,
+    .history-card,
+    .site-card,
+    .culture-card,
+    .festival-card,
+    .sector-card,
+    .industry-card,
+    .stat-card,
+    .indicator-item,
+    .infra-category,
+    .personality-card,
+    .fact-card {
+        border: 1px solid #333;
+    }
+}
